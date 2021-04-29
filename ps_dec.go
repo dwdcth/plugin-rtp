@@ -115,6 +115,8 @@ func (dec *DecPSPackage) decProgramStreamMap() error {
 	if err != nil {
 		return err
 	}
+	return dec.Skip(int(psm))
+
 	//drop psm version infor
 	if err = dec.Skip(2); err != nil {
 		return err
